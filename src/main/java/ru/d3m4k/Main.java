@@ -3,22 +3,12 @@ package ru.d3m4k;
 public class Main {
 
         public static void main(String[] args) {
-            int[] array = {64, 34, 25, 12, 22, 11, 90};
-
-            System.out.println("Исходный массив:");
-            printArray(array);
-
-            int[] bubbleSortedArray = bubbleSort(array.clone());
-            System.out.println("Отсортированный массив (пузырьковая сортировка):");
-            printArray(bubbleSortedArray);
-
-            int[] selectionSortedArray = selectionSort(array.clone());
-            System.out.println("Отсортированный массив (сортировка выборкой):");
-            printArray(selectionSortedArray);
-
-            int[] quickSortedArray = quickSort(array.clone(), 0, array.length - 1);
-            System.out.println("Отсортированный массив (быстрая сортировка):");
-            printArray(quickSortedArray);
+            int a = 5;
+            int b = 3;
+            a = a + b;
+            b = a - b;
+            System.out.println(a);
+            System.out.println(b);
         }
 
         public static int[] bubbleSort(int[] arr) {
@@ -84,4 +74,12 @@ public class Main {
             }
             System.out.println();
         }
+
+    public static void validateInput(String input) throws Exception {
+        for (char c : input.toCharArray()) {
+            if (!Character.isDigit(c)) {
+                throw new Exception("Input string must contain only digits");
+            }
+        }
     }
+}
